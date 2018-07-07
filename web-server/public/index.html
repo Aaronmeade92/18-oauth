@@ -119,7 +119,7 @@
   </script>
 
   <script>
-    let linkedinURL = "https://accounts.google.com/o/oauth2/v2/auth";
+    let linkedinURL = "https://api.linkedin.com/v1/people/~?format=json";
     let options = {
       client_id: '86ynfrzj7alr7p',
       redirect_uri: 'http://localhost:3001/oauth',
@@ -130,7 +130,7 @@
     let QueryString = Object.keys(options).map((key, i) => {
       return `${key}=` + encodeURIComponent(options[key]);
     }).join("&");
-    let authURL = `${googleURL}?${QueryString}`;
+    let authURL = `${linkedinURL}?${QueryString}`;
     $('#oauth').append(`<a href="${authURL}">Login With Google</a>`);
   </script>
 
